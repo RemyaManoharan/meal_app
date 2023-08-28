@@ -32,7 +32,7 @@ function useFilter() {
       // Fetch reviews for each meal and associate them
       const mealsWithReviews = await Promise.all(
         data.map(async (meal) => {
-          const fetchReviewsUrl = `http://localhost:5000/api/reviews/${meal.id}/reviews`;
+          const fetchReviewsUrl = `/api/reviews/${meal.id}/reviews`;
           const reviewsResponse = await fetch(fetchReviewsUrl);
           const reviewsData = await reviewsResponse.json();
           return { ...meal, reviews: reviewsData };

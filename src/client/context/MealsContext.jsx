@@ -4,9 +4,8 @@ import ReactDOM from "react-dom";
 export const MealsContext = createContext();
 
 export const MealsProvider = ({ children, limit }) => {
-  const fetch_url = "http://localhost:5000/api/meals";
+  const fetch_url = "/api/meals";
   const [meals, setMeals] = useState([]);
-
 
   const getMeals = async () => {
     try {
@@ -16,7 +15,7 @@ export const MealsProvider = ({ children, limit }) => {
       // Fetch reviews for each meal and associate them
       const mealsWithReviews = await Promise.all(
         data.map(async (meal) => {
-          const fetchReviewsUrl = `http://localhost:5000/api/reviews/${meal.id}/reviews`;
+          const fetchReviewsUrl = `/api/reviews/${meal.id}/reviews`;
           const reviewsResponse = await fetch(fetchReviewsUrl);
           const reviewsData = await reviewsResponse.json();
           return { ...meal, reviews: reviewsData };

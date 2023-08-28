@@ -14,7 +14,7 @@ function ReservationForm({ id }) {
   });
   const createReservation = async (res) => {
     try {
-      const response = await fetch("http://localhost:3000/api/reservations", {
+      const response = await fetch("/api/reservations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

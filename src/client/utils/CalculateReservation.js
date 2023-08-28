@@ -7,13 +7,13 @@ function CalculateReservation() {
 
   useEffect(() => {
     // Fetch reservations data from your API
-    fetch("http://localhost:5000/api/reservations")
+    fetch("/api/reservations")
       .then((response) => response.json())
       .then((data) => setReservations(data))
       .catch((error) => console.error("Error fetching reservations:", error));
   }, []);
 
- const calculateRemainingSpots = (meal) => {
+  const calculateRemainingSpots = (meal) => {
     const now = new Date();
     const futureReservations = reservations.filter((reservation) => {
       return (
@@ -25,7 +25,7 @@ function CalculateReservation() {
     return remainingSpots;
   };
 
-  return {calculateRemainingSpots};
+  return { calculateRemainingSpots };
 }
 
 export default CalculateReservation;

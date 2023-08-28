@@ -16,7 +16,7 @@ function ReviewPage() {
 
   const createReview = async (reviewData) => {
     try {
-      const response = await fetch("http://localhost:3000/api/reviews", {
+      const response = await fetch("/api/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,6 @@ function ReviewPage() {
     }
   }
 
- 
   return (
     <div className="review-container">
       <h2>
@@ -91,7 +90,7 @@ function ReviewPage() {
               </option>
             ))}
           </select>
-         
+
           <textarea
             cols={50}
             rows={12}
