@@ -4,7 +4,7 @@ const { validateMeal, validateReservation } = require("../datavalidation");
 // /api/reservations	GET	Returns all reservations
 const getReservation = async (req, res) => {
   try {
-    const reservation = await knex("reservation");
+    const reservation = await knex("reservations").select("*");
     if (!reservation) {
       return res.status(404).json({ error: "no reserbvatoions yet" });
     }
