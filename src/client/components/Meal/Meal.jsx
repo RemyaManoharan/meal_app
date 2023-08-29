@@ -4,7 +4,7 @@ import "./Meal.css";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Star from "../Star/Star";
 
-function Meal({ meal ,availableSpots}) {
+function Meal({ meal, availableSpots }) {
   const { id, title, description, price, max_reservations } = meal;
   const reviews = meal.reviews || [];
 

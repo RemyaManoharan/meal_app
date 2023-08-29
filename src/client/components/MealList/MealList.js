@@ -25,8 +25,10 @@ export default function MealList({ newMeals, limit, query }) {
     <section className="meal-list">
       <div className="meal-card">
         {filteredMeals.map((meal) => {
-        const remainingSpots = calculateRemainingSpots(meal);
-          return <Meal key={meal.id} meal={meal} availableSpots = {remainingSpots}/>;
+          const remainingSpots = calculateRemainingSpots(meal);
+          return (
+            <Meal key={meal.id} meal={meal} availableSpots={remainingSpots} />
+          );
         })}
       </div>
     </section>
